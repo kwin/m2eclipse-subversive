@@ -18,7 +18,7 @@
   <artifactId>org.sonatype.ide.eclipse.subversive.feature</artifactId>
   <packaging>eclipse-feature</packaging>
 
-  <name>Maven SCM handler for Subversive</name>
+  <name>Maven SCM Handler for Subversive Feature</name>
 
   <build>
     <plugins>

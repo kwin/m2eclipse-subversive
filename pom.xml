@@ -21,7 +21,7 @@
   <version>0.12.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>Maven SCM Handler for Subversive (Parent)</name>
+  <name>Maven SCM Handler for Subversive Parent</name>
 
   <properties>
     <tycho-version>0.10.0</tycho-version>

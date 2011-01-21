@@ -18,7 +18,7 @@
   <artifactId>org.sonatype.ide.eclipse.subversive</artifactId>
   <packaging>eclipse-plugin</packaging>
 
-  <name>Maven SCM handler for Subversive Plug-in</name>
+  <name>Maven SCM Handler for Subversive Plug-in</name>
 
   <build>
     <sourceDirectory>src</sourceDirectory>
