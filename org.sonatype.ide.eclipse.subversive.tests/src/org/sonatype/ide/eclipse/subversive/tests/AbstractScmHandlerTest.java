@@ -38,7 +38,7 @@ public class AbstractScmHandlerTest extends AbstractMavenProjectTestCase {
     };
     job.schedule();
     job.join();
-    assertTrue(job.getResult().isOK());
+    assertTrue(String.valueOf(job.getResult()), job.getResult().isOK());
   }
 
   protected void assertWorkspaceProjectShared(String projectName) throws Exception {
