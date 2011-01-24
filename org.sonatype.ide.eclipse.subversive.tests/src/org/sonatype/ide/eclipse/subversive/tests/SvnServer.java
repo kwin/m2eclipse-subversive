@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.Arrays;
 
 
@@ -136,6 +137,21 @@ public class SvnServer {
     svnPort = (port == 0) ? getUnusedPort() : port;
 
     server = (svnPort > 0) ? svnserve(basedir, svnPort) : null;
+
+    if(svnPort > 0) {
+      long start = System.currentTimeMillis();
+      while(!ping(svnPort)) {
+        if(System.currentTimeMillis() - start > 10 * 1000) {
+          throw new Exception("Timeout while waiting for SVN server to start up");
+        }
+
+        try {
+          Thread.sleep(100);
+        } catch(InterruptedException e) {
+          // ignored
+        }
+      }
+    }
 
     return this;
   }
@@ -264,6 +280,18 @@ public class SvnServer {
     }
 
     return port;
+  }
+
+  private boolean ping(int port) {
+    try {
+      Socket socket = new Socket((String) null, port);
+      socket.close();
+      return true;
+    } catch(UnknownHostException e) {
+      return false;
+    } catch(IOException e) {
+      return false;
+    }
   }
 
   private static String getSvnAdminCmd() {
