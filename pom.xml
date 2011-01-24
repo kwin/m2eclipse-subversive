@@ -34,6 +34,7 @@
   <modules>
     <module>org.sonatype.ide.eclipse.subversive.target-platform</module>
     <module>org.sonatype.ide.eclipse.subversive</module>
+    <module>org.sonatype.ide.eclipse.subversive.tests</module>
     <module>org.sonatype.ide.eclipse.subversive.feature</module>
   </modules>
 
@@ -77,6 +78,7 @@
               <include>**/*Test.java</include>
             </includes>
             <argLine>${tycho.test.jvmArgs}</argLine>
+            <appArgLine>-pluginCustomization ${basedir}/plugin_customization.ini</appArgLine>
             <forkedProcessTimeoutInSeconds>600</forkedProcessTimeoutInSeconds>
           </configuration>
         </plugin>
