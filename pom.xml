@@ -24,6 +24,7 @@
   <name>Maven SCM Handler for Subversive Parent</name>
 
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <tycho-version>0.10.0</tycho-version>
     <m2eclipse-core.version>0.12.0.20101102-1505</m2eclipse-core.version>
     <m2eclipse-core.site>0.12.0/S/${m2eclipse-core.version}</m2eclipse-core.site>
