@@ -120,7 +120,7 @@ public class SvnServer {
       return this;
     }
 
-    basedir = File.createTempFile("s2svnit", ".dir");
+    basedir = File.createTempFile("svntest", ".dir");
     basedir.delete();
 
     createSvnRepository(basedir.getAbsoluteFile());
