@@ -142,7 +142,12 @@ public class SvnServer {
       long start = System.currentTimeMillis();
       while(!ping(svnPort)) {
         if(System.currentTimeMillis() - start > 10 * 1000) {
-          throw new Exception("Timeout while waiting for SVN server to start up");
+          try {
+            int exitCode = server.exitValue();
+            throw new Exception("SVN server failed to start up, exit code is " + exitCode);
+          } catch(IllegalThreadStateException e) {
+            throw new Exception("Timeout while waiting for SVN server to start up");
+          }
         }
 
         try {
