@@ -9,9 +9,9 @@
 package org.sonatype.ide.eclipse.subversive.internal;
 
 import org.eclipse.core.runtime.IAdapterFactory;
+import org.eclipse.m2e.core.scm.ScmUrl;
 import org.eclipse.team.svn.core.resource.IRepositoryResource;
 import org.eclipse.team.svn.ui.repository.model.IResourceTreeNode;
-import org.maven.ide.eclipse.scm.ScmUrl;
 
 
 /**

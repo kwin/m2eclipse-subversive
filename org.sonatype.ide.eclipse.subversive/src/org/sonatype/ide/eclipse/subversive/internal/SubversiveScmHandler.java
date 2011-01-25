@@ -15,6 +15,8 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.m2e.core.project.MavenProjectScmInfo;
+import org.eclipse.m2e.core.scm.ScmHandler;
 import org.eclipse.team.svn.core.connector.ISVNConnector.Depth;
 import org.eclipse.team.svn.core.connector.SVNRevision;
 import org.eclipse.team.svn.core.operation.CompositeOperation;
@@ -27,8 +29,6 @@ import org.eclipse.team.svn.core.resource.IRepositoryLocation;
 import org.eclipse.team.svn.core.utility.ILoggedOperationFactory;
 import org.eclipse.team.svn.core.utility.ProgressMonitorUtility;
 import org.eclipse.team.svn.core.utility.SVNUtility;
-import org.maven.ide.eclipse.project.MavenProjectScmInfo;
-import org.maven.ide.eclipse.scm.ScmHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

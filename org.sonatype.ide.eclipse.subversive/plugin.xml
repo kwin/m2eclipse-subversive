@@ -9,7 +9,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.maven.ide.eclipse.scmHandlers">
+         point="org.eclipse.m2e.core.scmHandlers">
       <handler
             class="org.sonatype.ide.eclipse.subversive.internal.SubversiveScmHandler"
             priority="9"
@@ -20,11 +20,11 @@
    <extension point="org.eclipse.core.runtime.adapters">
       <factory adaptableType="org.eclipse.team.svn.ui.repository.model.RepositoryFolder"
             class="org.sonatype.ide.eclipse.subversive.internal.SubversiveUrlAdapterFactory">
-         <adapter type="org.maven.ide.eclipse.scm.ScmUrl"/>
+         <adapter type="org.eclipse.m2e.core.scm.ScmUrl"/>
       </factory>
       <factory adaptableType="org.eclipse.team.svn.ui.repository.model.RepositoryLocation"
             class="org.sonatype.ide.eclipse.subversive.internal.SubversiveUrlAdapterFactory">
-         <adapter type="org.maven.ide.eclipse.scm.ScmUrl"/>
+         <adapter type="org.eclipse.m2e.core.scm.ScmUrl"/>
       </factory>
    </extension>
 
