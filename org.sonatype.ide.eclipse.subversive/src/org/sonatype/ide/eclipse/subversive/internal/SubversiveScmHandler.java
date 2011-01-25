@@ -47,48 +47,34 @@ public class SubversiveScmHandler extends ScmHandler {
       InterruptedException {
     log.debug("Checking out project from {} to {}", info, location);
 
-    enterCheckout(info, location);
-    try {
-      IRepositoryContainer container = getSVNRepositoryContainer(info);
+    IRepositoryContainer container = getRepositoryContainer(info);
 
-      prepareCheckout(info, location, container);
+    IActionOperation op = createOperation(container, location);
 
-      CheckoutAsOperation checkout = new CheckoutAsOperation(location, container, Depth.INFINITY, false, true);
+    ProgressMonitorUtility.doTaskExternal(op, monitor, ILoggedOperationFactory.EMPTY);
 
-      AddRepositoryLocationOperation add = new AddRepositoryLocationOperation(container.getRepositoryLocation());
-
-      SaveRepositoryLocationsOperation save = new SaveRepositoryLocationsOperation();
-
-      CompositeOperation op = new CompositeOperation(checkout.getOperationName(), checkout.getMessagesClass());
-      op.add(checkout);
-      op.add(add, new IActionOperation[] {checkout});
-      op.add(save, new IActionOperation[] {add});
-
-      ProgressMonitorUtility.doTaskExternal(op, monitor, ILoggedOperationFactory.EMPTY);
-
-      IStatus status = op.getStatus();
-      if(status != null && !status.isOK()) {
-        throw new CoreException(status);
-      }
-    } finally {
-      leaveCheckout();
+    IStatus status = op.getStatus();
+    if(status != null && !status.isOK()) {
+      throw new CoreException(status);
     }
   }
 
-  protected void enterCheckout(MavenProjectScmInfo info, File location) throws CoreException {
-    // extension hook
+  protected IActionOperation createOperation(IRepositoryContainer container, File location) throws CoreException {
+    CheckoutAsOperation checkout = new CheckoutAsOperation(location, container, Depth.INFINITY, false, true);
+
+    AddRepositoryLocationOperation add = new AddRepositoryLocationOperation(container.getRepositoryLocation());
+
+    SaveRepositoryLocationsOperation save = new SaveRepositoryLocationsOperation();
+
+    CompositeOperation op = new CompositeOperation(checkout.getOperationName(), checkout.getMessagesClass());
+    op.add(checkout);
+    op.add(add, new IActionOperation[] {checkout});
+    op.add(save, new IActionOperation[] {add});
+
+    return op;
   }
 
-  protected void prepareCheckout(MavenProjectScmInfo info, File location, IRepositoryContainer container)
-      throws CoreException {
-    // extension hook
-  }
-
-  protected void leaveCheckout() {
-    // extension hook
-  }
-
-  private IRepositoryContainer getSVNRepositoryContainer(MavenProjectScmInfo info) throws CoreException {
+  protected IRepositoryContainer getRepositoryContainer(MavenProjectScmInfo info) throws CoreException {
     String url = info.getFolderUrl().substring(SVN_SCM_ID.length());
 
     // Force svn to verify the url
@@ -108,7 +94,7 @@ public class SubversiveScmHandler extends ScmHandler {
     return container;
   }
 
-  private void fixRepositoryUrl(IRepositoryLocation location) {
+  protected void fixRepositoryUrl(IRepositoryLocation location) {
     /*
      * Workaround for bug in SVNUtility.initializeRepositoryLocation() which collapses all double slashes on
      * non-Windows platforms, thereby screwing the scheme part of the URL (https://bugs.eclipse.org/bugs/show_bug.cgi?id=303085).
