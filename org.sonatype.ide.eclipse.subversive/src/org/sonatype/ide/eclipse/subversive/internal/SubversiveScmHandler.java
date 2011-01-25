@@ -81,7 +81,7 @@ public class SubversiveScmHandler extends ScmHandler {
     try {
       SVNUtility.getSVNUrl(url);
     } catch(MalformedURLException e) {
-      throw new CoreException(new Status(IStatus.ERROR, "SubversiveScmHandler", 0, "Invalid url "
+      throw new CoreException(new Status(IStatus.ERROR, getClass().getName(), 0, "Invalid url "
           + info.getFolderUrl().substring(SVN_SCM_ID.length()), e));
     }
 
