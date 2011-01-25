@@ -23,16 +23,16 @@
 </location>
 
 <location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
-<unit id="org.eclipse.team.svn.feature.group" version="0.7.9.I20110124-1700"/>
-<unit id="org.eclipse.team.svn.source.feature.group" version="0.7.9.I20110124-1700"/>
-<repository location="http://download.eclipse.org/technology/subversive/0.7/update-site/"/>
+<unit id="org.eclipse.team.svn.feature.group" version="0.7.9.I20100917-1700"/>
+<unit id="org.eclipse.team.svn.source.feature.group" version="0.7.9.I20100917-1700"/>
+<repository location="https://www.sonatype.com/~ifedorenko/subversive/"/>
 </location>
 
 <location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
-<unit id="org.polarion.eclipse.team.svn.connector.feature.group" version="2.2.2.I20110124-1700"/>
-<unit id="org.polarion.eclipse.team.svn.connector.svnkit16.feature.group" version="2.2.2.I20110124-1700"/>
-<unit id="org.polarion.eclipse.team.svn.connector.source.feature.group" version="2.2.2.I20110124-1700"/>
-<repository location="http://community.polarion.com/projects/subversive/download/eclipse/2.0/update-site/"/>
+<unit id="org.polarion.eclipse.team.svn.connector.feature.group" version="2.2.2.I20100917-1700"/>
+<unit id="org.polarion.eclipse.team.svn.connector.svnkit16.feature.group" version="2.2.2.I20100917-1700"/>
+<unit id="org.polarion.eclipse.team.svn.connector.source.feature.group" version="2.2.2.I20100917-1700"/>
+<repository location="https://www.sonatype.com/~ifedorenko/subversive-connectors/"/>
 </location>
 
 </locations>
