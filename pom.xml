@@ -16,8 +16,8 @@
     <version>6</version>
   </parent>
 
-  <groupId>org.sonatype.ide.eclipse.subversive</groupId>
-  <artifactId>org.sonatype.ide.eclipse.subversive.parent</artifactId>
+  <groupId>org.sonatype.m2e.subversive</groupId>
+  <artifactId>org.sonatype.m2e.subversive.parent</artifactId>
   <version>0.13.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
@@ -31,10 +31,10 @@
   </properties>
 
   <modules>
-    <module>org.sonatype.ide.eclipse.subversive.target-platform</module>
-    <module>org.sonatype.ide.eclipse.subversive</module>
-    <module>org.sonatype.ide.eclipse.subversive.tests</module>
-    <module>org.sonatype.ide.eclipse.subversive.feature</module>
+    <module>org.sonatype.m2e.subversive.target-platform</module>
+    <module>org.sonatype.m2e.subversive</module>
+    <module>org.sonatype.m2e.subversive.tests</module>
+    <module>org.sonatype.m2e.subversive.feature</module>
   </modules>
 
   <build>
@@ -54,8 +54,8 @@
           <resolver>p2</resolver>
           <target>
             <artifact>
-              <groupId>org.sonatype.ide.eclipse.subversive</groupId>
-              <artifactId>org.sonatype.ide.eclipse.subversive.target-platform</artifactId>
+              <groupId>org.sonatype.m2e.subversive</groupId>
+              <artifactId>org.sonatype.m2e.subversive.target-platform</artifactId>
               <version>${project.version}</version>
               <classifier>${target.platform}</classifier>
             </artifact>

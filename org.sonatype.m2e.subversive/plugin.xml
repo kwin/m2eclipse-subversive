@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2010-2011 Sonatype, Inc.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+-->
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.m2e.core.scmHandlers">
+      <handler
+            class="org.sonatype.m2e.subversive.internal.SubversiveScmHandler"
+            priority="9"
+            type="svn">
+      </handler>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.adapters">
+      <factory adaptableType="org.eclipse.team.svn.ui.repository.model.RepositoryFolder"
+            class="org.sonatype.m2e.subversive.internal.SubversiveUrlAdapterFactory">
+         <adapter type="org.eclipse.m2e.core.scm.ScmUrl"/>
+      </factory>
+      <factory adaptableType="org.eclipse.team.svn.ui.repository.model.RepositoryLocation"
+            class="org.sonatype.m2e.subversive.internal.SubversiveUrlAdapterFactory">
+         <adapter type="org.eclipse.m2e.core.scm.ScmUrl"/>
+      </factory>
+   </extension>
+
+</plugin>
