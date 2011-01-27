@@ -33,10 +33,9 @@ http://www.eclipse.org/legal/epl-v10.html
    </url>
 
    <requires>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.team.svn.core"/>
-      <import plugin="org.eclipse.team.svn.ui"/>
-      <import plugin="org.eclipse.m2e.core" version="0.13.0" match="compatible"/>
+      <import feature="org.eclipse.platform" version="3.4.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.m2e.feature"/>
+      <import feature="org.eclipse.team.svn"/>
    </requires>
 
    <plugin
