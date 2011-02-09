@@ -6,11 +6,13 @@ Bundle-Version: 0.13.0.qualifier
 Bundle-Vendor: Sonatype
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: org.eclipse.m2e.core,
+ org.eclipse.m2e.scm,
  org.eclipse.m2e.tests.common,
  org.eclipse.m2e.maven.runtime,
  org.sonatype.m2e.subversive,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
+ org.eclipse.ui,
  org.eclipse.team.core,
  org.eclipse.team.svn.core,
  org.junit

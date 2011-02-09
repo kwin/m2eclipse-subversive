@@ -15,8 +15,8 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.m2e.core.project.MavenProjectScmInfo;
-import org.eclipse.m2e.core.scm.ScmHandler;
+import org.eclipse.m2e.scm.MavenProjectScmInfo;
+import org.eclipse.m2e.scm.spi.ScmHandler;
 import org.eclipse.team.svn.core.connector.ISVNConnector.Depth;
 import org.eclipse.team.svn.core.connector.SVNRevision;
 import org.eclipse.team.svn.core.operation.CompositeOperation;
@@ -36,6 +36,7 @@ import org.slf4j.LoggerFactory;
 /**
  * A SCM handler to enable M2Eclipse to checkout using Subversive.
  */
+@SuppressWarnings("restriction")
 public class SubversiveScmHandler extends ScmHandler {
 
   private static final Logger log = LoggerFactory.getLogger(SubversiveScmHandler.class);
