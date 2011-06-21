@@ -21,8 +21,8 @@
 </location>
 
 <location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
-<unit id="org.eclipse.m2e.feature.feature.group" version="1.0.0.201106021057"/>
-<unit id="org.eclipse.m2e.tests.common" version="1.0.0.201106021057"/>
+<unit id="org.eclipse.m2e.feature.feature.group" version="1.0.100.201106171112"/>
+<unit id="org.eclipse.m2e.tests.common" version="1.0.100.201106171112"/>
 <repository location="https://repository.sonatype.org/content/repositories/forge-sites/m2e/1.0.0/N/1.0.0.201106021057/"/>
 </location>
 
@@ -33,9 +33,9 @@
 </location>
 
 <location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
-<unit id="org.polarion.eclipse.team.svn.connector.feature.group" version="2.2.2.I20110523-1700"/>
-<unit id="org.polarion.eclipse.team.svn.connector.svnkit16.feature.group" version="2.2.2.I20110523-1700"/>
-<unit id="org.polarion.eclipse.team.svn.connector.source.feature.group" version="2.2.2.I20110523-1700"/>
+<unit id="org.polarion.eclipse.team.svn.connector.feature.group" version="2.2.2.I20110602-1700"/>
+<unit id="org.polarion.eclipse.team.svn.connector.svnkit16.feature.group" version="2.2.2.I20110602-1700"/>
+<unit id="org.polarion.eclipse.team.svn.connector.source.feature.group" version="2.2.2.I20110602-1700"/>
 <repository location="http://community.polarion.com/projects/subversive/download/eclipse/2.0/update-site/"/>
 </location>
 
