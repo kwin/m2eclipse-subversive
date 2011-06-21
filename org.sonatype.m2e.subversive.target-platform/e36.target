@@ -21,8 +21,8 @@
 </location>
 
 <location includeAllPlatforms="false" includeMode="planner" type="InstallableUnit">
-<unit id="org.eclipse.m2e.feature.feature.group" version="1.0.100.201106171112"/>
-<unit id="org.eclipse.m2e.tests.common" version="1.0.100.201106171112"/>
+<unit id="org.eclipse.m2e.feature.feature.group" version="1.0.0.20110607-2117"/>
+<unit id="org.eclipse.m2e.tests.common" version="1.0.0.20110607-2117"/>
 <repository location="http://download.eclipse.org/technology/m2e/releases/1.0"/>
 </location>
 
